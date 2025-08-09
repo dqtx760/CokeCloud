@@ -5,13 +5,13 @@
     <title>CokeCloud可乐云导航</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 基础布局 - 增加整体间距 */
+        /* 基础布局 - 缩小整体间距 */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #e0e5ec;
             color: #333;
             margin: 0;
-            padding: 30px; /* 增大了整体内边距 */
+            padding: 20px; /* 减小整体内边距 */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -24,23 +24,23 @@
         :root {
             --bookmark-color: #FFD700;
             --accent-color: #FF3333;
-            --register-green: #8DB600; /* 新增苹果绿色值 */
+            --register-green: #8DB600; /* 苹果绿色值 */
         }
 
         /* 主容器 - 调整间距 */
         .main-container {
             width: 100%;
             max-width: 500px;
-            padding-bottom: 40px; /* 增大底部间距 */
+            padding-bottom: 30px; /* 减小底部间距 */
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px; /* 新增：元素间统一间距 */
+            gap: 15px; /* 减小元素间间距 */
         }
 
-        /* 标题样式 - 增大下边距 */
+        /* 标题样式 - 减小下边距 */
         header {
-            margin-bottom: 35px; /* 增大标题下方间距 */
+            margin-bottom: 25px; /* 减小标题下方间距 */
             text-align: center;
         }
 
@@ -57,56 +57,55 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px; /* 新增：导航项间距 */
+            gap: 10px; /* 减小导航项间距 */
         }
 
-        /* 分区标题 - 增大间距 */
+        /* 分区标题 - 减小间距 */
         .section-title {
             font-size: 1.2em;
             font-weight: bold;
-            margin: 20px 0 15px; /* 增大上下间距 */
+            margin: 15px 0 10px; /* 减小上下间距 */
             color: var(--accent-color);
             text-transform: uppercase;
             text-align: center;
             width: 100%;
         }
 
-        /* 按钮组容器 - 调整间距 */
+        /* 按钮组容器 - 减小间距 */
         .button-group {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 15px; /* 增大组间间距 */
-            gap: 12px; /* 新增：按钮间间距 */
+            margin-bottom: 10px; /* 减小组间间距 */
+            gap: 8px; /* 减小按钮间间距 */
         }
 
-        /* 注册按钮 - 改为苹果绿 */
+        /* 注册按钮 - 苹果绿 */
         .register-button {
-            background-color: var(--register-green) !important; /* 苹果绿色 */
+            background-color: var(--register-green) !important;
             color: white !important;
             border-radius: 15px;
-            padding: 16px; /* 稍微增大内边距 */
-            margin: 10px 0; /* 增大外边距 */
+            padding: 14px; /* 标准内边距 */
+            margin: 8px 0; /* 标准外边距 */
             width: 100%;
-            max-width: 320px; /* 稍微加宽 */
+            max-width: 300px; /* 标准宽度 */
             box-shadow: 5px 5px 12px #b8b9be, -5px -5px 12px #ffffff;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* 标准按钮样式 - 调整内边距 */
+        /* 标准按钮样式 */
         .nav-button {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 14px; /* 增大内边距 */
-            margin: 8px 0; /* 增大外边距 */
+            padding: 12px; /* 标准内边距 */
+            margin: 6px 0; /* 标准外边距 */
             background-color: #e0e5ec;
             border-radius: 15px;
             width: 100%;
-            max-width: 320px; /* 稍微加宽 */
+            max-width: 300px; /* 标准宽度 */
             box-shadow: 5px 5px 12px #b8b9be, -5px -5px 12px #ffffff;
             cursor: pointer;
             text-decoration: none;
@@ -116,42 +115,42 @@
 
         /* 图标样式 */
         .custom-icon {
-            width: 22px; /* 稍微增大 */
-            height: 22px;
-            margin-right: 15px; /* 增大右边距 */
+            width: 20px; /* 标准尺寸 */
+            height: 20px;
+            margin-right: 12px; /* 标准右边距 */
             object-fit: contain;
             filter: brightness(0) invert(1);
         }
 
         .button-icon {
-            margin-right: 15px; /* 增大右边距 */
-            font-size: 1.3em; /* 稍微增大 */
+            margin-right: 12px; /* 标准右边距 */
+            font-size: 1.2em; /* 标准尺寸 */
             color: var(--accent-color);
         }
 
-        /* 书签按钮 - 增大尺寸和间距 */
+        /* 书签按钮 */
         #bookmarkButton {
             background-color: var(--bookmark-color);
             color: #333;
             border: none;
-            padding: 16px 32px; /* 增大内边距 */
+            padding: 14px 28px;
             border-radius: 15px;
             box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.15);
             cursor: pointer;
             font-weight: bold;
-            margin: 30px 0 20px; /* 增大上下间距 */
-            font-size: 1.1em; /* 稍微增大字体 */
+            margin: 20px 0 15px; /* 减小上下间距 */
+            font-size: 1em; /* 标准字体 */
             transition: all 0.3s ease;
         }
 
-        /* 底部信息 - 调整间距 */
+        /* 底部信息 */
         footer {
-            padding: 15px 0; /* 增大内边距 */
+            padding: 12px 0;
             color: #666;
             width: 100%;
             text-align: center;
-            font-size: 0.95em; /* 稍微增大字体 */
-            margin-top: 20px; /* 增大顶部间距 */
+            font-size: 0.9em;
+            margin-top: 15px; /* 减小顶部间距 */
         }
 
         /* 悬浮效果统一 */
@@ -164,37 +163,9 @@
         #bookmarkButton:hover {
             transform: translateY(-3px) scale(1.03);
         }
-
-        /* 新增：书签提示样式 */
-        .bookmark-tooltip {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.8);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-size: 0.9em;
-            z-index: 100;
-            display: none;
-            animation: fadeInOut 3s;
-        }
-
-        @keyframes fadeInOut {
-            0% { opacity: 0; top: 10px; }
-            20% { opacity: 1; top: 20px; }
-            80% { opacity: 1; top: 20px; }
-            100% { opacity: 0; top: 10px; }
-        }
     </style>
 </head>
 <body>
-    <!-- 书签提示弹窗 -->
-    <div id="bookmarkTooltip" class="bookmark-tooltip">
-        请使用 Ctrl+D收藏本页
-    </div>
-
     <div class="main-container">
         <header>
             <h1>9.9/月300G流量</h1>
@@ -211,11 +182,11 @@
 
             <div class="button-group">
                 <div class="section-title">客户端下载</div>
-                <a href="https://pan.xunlei.com/s/VOXEBTcFZWYhuK2DRAmKH9VTA1?pwd=3j7b# " class="nav-button">
+                <a href="https://pan.xunlei.com/s/VOXEBTcFZWYhuK2DRAmKH9VTA1?pwd=3j7b#" class="nav-button">
                     <i class="fab fa-windows button-icon"></i>
                     <span>Windows</span>
                 </a>
-                <a href="https://pan.xunlei.com/s/VOXEBikrqv4RZV5P1gftXe6dA1?pwd=bwzx# " class="nav-button">
+                <a href="https://pan.xunlei.com/s/VOXEBikrqv4RZV5P1gftXe6dA1?pwd=bwzx#" class="nav-button">
                     <i class="fab fa-android button-icon"></i>
                     <span>Android</span>
                 </a>
@@ -223,7 +194,7 @@
                     <i class="fab fa-apple button-icon"></i>
                     <span>iPhone</span>
                 </a>
-                <a href="https://pan.xunlei.com/s/VOXECFgHyTAolGRHOIC2LiIwA1?pwd=tqg9# " class="nav-button" target="_blank">
+                <a href="https://pan.xunlei.com/s/VOXECFgHyTAolGRHOIC2LiIwA1?pwd=tqg9#" class="nav-button" target="_blank">
                     <i class="fas fa-laptop button-icon"></i>
                     <span>Mac电脑</span>
                 </a>
@@ -240,27 +211,10 @@
     </footer>
 
     <script>
-        // 新版书签功能 - 显示提示而非尝试直接添加
+        // 简洁书签提示
         document.getElementById('bookmarkButton').addEventListener('click', function() {
-            const tooltip = document.getElementById('bookmarkTooltip');
-            tooltip.style.display = 'block';
-            
-            // 3秒后自动消失
-            setTimeout(() => {
-                tooltip.style.display = 'none';
-            }, 3000);
-            
-            // 尝试在支持的情况下使用现代API (大多数浏览器已禁用)
-            try {
-                if(window.chrome && window.chrome.bookmarks) {
-                    window.chrome.bookmarks.create({
-                        title: document.title,
-                        url: window.location.href
-                    });
-                }
-            } catch(e) {
-                // 现代浏览器不允许直接操作书签
-            }
+            const isMac = navigator.platform.toUpperCase().includes('MAC');
+            alert(`请使用 ${isMac ? 'Command+D' : 'Ctrl+D'} 收藏本页`);
         });
     </script>
 </body>
