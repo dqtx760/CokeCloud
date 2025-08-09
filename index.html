@@ -2,97 +2,108 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CokeCloud可乐云导航</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 基础布局 - 缩小整体间距 */
+        /* 基础布局 - 响应式调整 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             background-color: #e0e5ec;
             color: #333;
-            margin: 0;
-            padding: 20px; /* 减小整体内边距 */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            box-sizing: border-box;
+            padding: 15px;
         }
 
         /* 双色系统 */
         :root {
             --bookmark-color: #FFD700;
             --accent-color: #FF3333;
-            --register-green: #8DB600; /* 苹果绿色值 */
+            --register-green: #8DB600; /* 苹果绿 */
         }
 
-        /* 主容器 - 调整间距 */
+        /* 主容器 - 响应式调整 */
         .main-container {
             width: 100%;
             max-width: 500px;
-            padding-bottom: 30px; /* 减小底部间距 */
+            padding: 20px 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px; /* 减小元素间间距 */
+            gap: 15px;
         }
 
-        /* 标题样式 - 减小下边距 */
+        /* 标题样式 - 动态字体大小 */
         header {
-            margin-bottom: 25px; /* 减小标题下方间距 */
+            margin-bottom: 20px;
             text-align: center;
         }
 
         h1 {
             color: var(--accent-color);
             margin: 0;
-            font-size: 2.2em;
-            letter-spacing: 1px;
+            font-size: clamp(1.8em, 6vw, 2.5em);
+            letter-spacing: 0.5px;
         }
 
-        /* 导航模块 */
+        /* 导航模块 - 响应式调整 */
         nav {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px; /* 减小导航项间距 */
+            gap: 10px;
         }
 
-        /* 分区标题 - 减小间距 */
+        /* 分区标题 - 动态字体大小 */
         .section-title {
-            font-size: 1.2em;
+            font-size: clamp(1em, 4vw, 1.2em);
             font-weight: bold;
-            margin: 15px 0 10px; /* 减小上下间距 */
+            margin: 10px 0;
             color: var(--accent-color);
             text-transform: uppercase;
             text-align: center;
             width: 100%;
         }
 
-        /* 按钮组容器 - 减小间距 */
+        /* 按钮组容器 - 响应式调整 */
         .button-group {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 10px; /* 减小组间间距 */
-            gap: 8px; /* 减小按钮间间距 */
+            margin-bottom: 10px;
+            gap: 8px;
         }
 
-        /* 注册按钮 - 苹果绿 */
+        /* 注册按钮 - 苹果绿色背景 */
         .register-button {
-            background-color: var(--register-green) !important;
+            background-color: var(--register-green) !important; /* 强制苹果绿 */
             color: white !important;
             border-radius: 15px;
-            padding: 14px; /* 标准内边距 */
-            margin: 8px 0; /* 标准外边距 */
+            padding: 16px;
+            margin: 8px 0;
             width: 100%;
-            max-width: 300px; /* 标准宽度 */
+            max-width: 320px;
+            min-height: 44px;
             box-shadow: 5px 5px 12px #b8b9be, -5px -5px 12px #ffffff;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
 
         /* 标准按钮样式 */
@@ -100,12 +111,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 12px; /* 标准内边距 */
-            margin: 6px 0; /* 标准外边距 */
+            padding: 14px;
+            margin: 6px 0;
             background-color: #e0e5ec;
             border-radius: 15px;
             width: 100%;
-            max-width: 300px; /* 标准宽度 */
+            max-width: 320px;
+            min-height: 44px;
             box-shadow: 5px 5px 12px #b8b9be, -5px -5px 12px #ffffff;
             cursor: pointer;
             text-decoration: none;
@@ -113,18 +125,18 @@
             transition: all 0.3s ease;
         }
 
-        /* 图标样式 */
+        /* 图标样式 - 适配绿色背景 */
         .custom-icon {
-            width: 20px; /* 标准尺寸 */
-            height: 20px;
-            margin-right: 12px; /* 标准右边距 */
+            width: 22px;
+            height: 22px;
+            margin-right: 12px;
             object-fit: contain;
-            filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1); /* 反转为白色 */
         }
 
         .button-icon {
-            margin-right: 12px; /* 标准右边距 */
-            font-size: 1.2em; /* 标准尺寸 */
+            margin-right: 12px;
+            font-size: clamp(1em, 4vw, 1.3em);
             color: var(--accent-color);
         }
 
@@ -133,13 +145,14 @@
             background-color: var(--bookmark-color);
             color: #333;
             border: none;
-            padding: 14px 28px;
+            padding: 16px 28px;
             border-radius: 15px;
             box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.15);
             cursor: pointer;
             font-weight: bold;
-            margin: 20px 0 15px; /* 减小上下间距 */
-            font-size: 1em; /* 标准字体 */
+            margin: 20px 0;
+            font-size: clamp(1em, 4vw, 1.1em);
+            min-height: 44px;
             transition: all 0.3s ease;
         }
 
@@ -149,19 +162,38 @@
             color: #666;
             width: 100%;
             text-align: center;
-            font-size: 0.9em;
-            margin-top: 15px; /* 减小顶部间距 */
+            font-size: clamp(0.8em, 3vw, 0.9em);
+            margin-top: 15px;
         }
 
-        /* 悬浮效果统一 */
-        .nav-button:hover, 
-        .register-button:hover, 
+        /* 悬浮效果 */
+        .nav-button:hover,
+        .register-button:hover,
         #bookmarkButton:hover {
             transform: translateY(-3px);
             box-shadow: 8px 8px 16px #b8b9be, -8px -8px 16px #ffffff;
         }
+
         #bookmarkButton:hover {
             transform: translateY(-3px) scale(1.03);
+        }
+
+        /* 响应式调整 - 小屏幕 */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .main-container {
+                padding: 15px 10px;
+            }
+            .register-button,
+            .nav-button {
+                padding: 12px;
+                max-width: 100%;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
@@ -211,7 +243,6 @@
     </footer>
 
     <script>
-        // 简洁书签提示
         document.getElementById('bookmarkButton').addEventListener('click', function() {
             const isMac = navigator.platform.toUpperCase().includes('MAC');
             alert(`请使用 ${isMac ? 'Command+D' : 'Ctrl+D'} 收藏本页`);
